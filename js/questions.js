@@ -24,7 +24,7 @@ const correctAnswers = {
   q18: ["<", "[i]", "+="],
   q19: ["False", "and", "True"],
 
-  // Categoría 4: Algoritmos clásicos (6 preguntas = 11 puntos)
+  // Categoría 4: Algoritmos clásicos (6 preguntas = 9 puntos)
   q20: ["for", "+=", "//"],
   q21: ["range", "-1", "*="],
   q22: ["range", "a", "13"],
@@ -50,8 +50,8 @@ const pointValues = {
   // Categoría 3: 2 puntos cada una
   q14: 2, q15: 2, q16: 2, q17: 2, q18: 2, q19: 2,
 
-  // Categoría 4: 2 puntos cada una excepto q25
-  q20: 2, q21: 2, q22: 2, q23: 2, q24: 2, q25: 1,
+  // Categoría 4: q20 y q24 = 1 punto, q21-q23 = 2 puntos, q25 = 1 punto
+  q20: 1, q21: 2, q22: 2, q23: 2, q24: 1, q25: 1,
 
   // Categoría 5: 2 puntos cada una
   q26: 2, q27: 2, q28: 2, q29: 2, q30: 2
