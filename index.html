@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+  <html lang="es">
+    <head>
+    <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tercer Parcial - Ciclos y Estructuras de Control en Python</title>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+          <link rel="stylesheet" href="css/styles.css">
+          </head>
+          <body class="bg-gray-50">
+          <div class="container mx-auto px-4 py-8">
+          <h1 class="text-3xl font-bold text-center text-blue-700 border-b-2 border-blue-500 pb-4 mb-6">Tercer Parcial - Ciclos y Estructuras de Control en Python</h1>
+          <h2 class="text-xl font-semibold text-center text-blue-600 mb-8">Aplicaciones con FOR, WHILE y Estructuras de Datos (50 puntos - 30 preguntas)</h2>
+
+          <!-- Información del estudiante -->
+          <div class="bg-blue-50 p-5 rounded-lg shadow-sm mb-6">
+          <h3 class="text-lg font-semibold text-blue-800 mb-4">Información del Estudiante</h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div>
+          <label for="nombre" class="block text-sm font-medium text-gray-700 mb-1">Nombre Completo:</label>
+          <input type="text" id="nombre" placeholder="Ingrese su nombre completo" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+          </div>
+          <div>
+          <label for="apellidos" class="block text-sm font-medium text-gray-700 mb-1">Apellidos Completos:</label>
+          <input type="text" id="apellidos" placeholder="Ingrese sus apellidos" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+          </div>
+          <div>
+          <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Correo Electrónico:</label>
+          <input type="email" id="email" placeholder="Ingrese su correo electrónico" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+          </div>
+          </div>
+          </div>
+
+          <!-- Instrucciones -->
+          <div class="bg-yellow-50 p-5 rounded-lg border-l-4 border-yellow-400 mb-6">
+          <h3 class="text-lg font-semibold text-gray-800 mb-2">Instrucciones Generales</h3>
+          <ul class="list-disc pl-5 space-y-1">
+          <li>Completa los <strong>espacios en blanco</strong> en cada fragmento de código Python.</li>
+          <li>Los espacios están marcados con <span class="code-placeholder">[...]</span>.</li>
+          <li>Enfócate en ciclos FOR, WHILE, condicionales y estructuras de datos.</li>
+          <li>Haz clic en <strong>"Verificar Respuesta"</strong> en cada pregunta para obtener retroalimentación.</li>
+          <li>Cuando completes todas las preguntas, haz clic en <strong>"Calcular Nota Final"</strong>.</li>
+          <li>El resultado de tu evaluación se enviará automáticamente por correo electrónico.</li>
+          </ul>
+          </div>
+
+          <!-- Barra de progreso -->
+          <div class="w-full bg-gray-200 rounded-full h-6 mb-8">
+          <div id="progress-bar" class="bg-green-500 h-6 rounded-full text-center text-white text-sm leading-6" style="width: 0%">0%</div>
+          </div>
+
+          <h2 class="text-xl font-semibold text-gray-800 mb-6">Sección de Preguntas - Ciclos en Python (Total: 50 Puntos - 30 Preguntas)</h2>
+
+          <!-- Contenedor de Preguntas -->
+          <div id="questions-container" class="space-y-8">
+
+          <!-- CATEGORÍA 1: CICLOS FOR BÁSICOS Y CONDICIONALES -->
+          <h3 class="text-lg font-semibold text-blue-600 border-b border-blue-300 pb-2">Categoría 1: Ciclos FOR Básicos y Condicionales (7 puntos)</h3>
+
+          <!-- Pregunta 1 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q1">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">1. Clasificador Par/Impar con FOR</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">1 Punto</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa el código para clasificar números como pares o impares usando un ciclo FOR.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: Usa el operador módulo (%) para verificar si un número es par.</p>
+          </div>
+          <div class="code-container">
+          <pre>numeros = [12, 5, 8, 21, 30, 7]
+
+<span class="code-placeholder" id="q1-part1" contenteditable="true">[...]</span> num in numeros:
+    if num <span class="code-placeholder" id="q1-part2" contenteditable="true">[...]</span> 2 == 0:
+        print(f"El número {num} es par.")
+    <span class="code-placeholder" id="q1-part3" contenteditable="true">[...]</span>:
+        print(f"El número {num} es impar.")</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(1)">Verificar Respuesta</button>
+          <div id="q1-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- Pregunta 2 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q2">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">2. Calificador de Exámenes con IF/ELIF</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">1 Punto</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa el sistema de calificaciones con múltiples rangos usando elif.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: Usa >= para comparar rangos y elif para condiciones intermedias.</p>
+          </div>
+          <div class="code-container">
+          <pre>puntajes = [92, 78, 45, 85, 60]
+
+for puntaje in puntajes:
+    if puntaje <span class="code-placeholder" id="q2-part1" contenteditable="true">[...]</span> 90:
+        calificacion = "A (Excelente)"
+    <span class="code-placeholder" id="q2-part2" contenteditable="true">[...]</span> puntaje >= 80:
+        calificacion = "B (Notable)"
+    elif puntaje >= 70:
+        calificacion = "C (Aprobado)"
+    <span class="code-placeholder" id="q2-part3" contenteditable="true">[...]</span>:
+        calificacion = "F (Reprobado)"
+
+    print(f"Puntaje {puntaje}: Calificación {calificacion}")</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(2)">Verificar Respuesta</button>
+          <div id="q2-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- Pregunta 3 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q3">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">3. Uso de CONTINUE en FOR</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">1 Punto</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa el código que salta productos cortos usando continue.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: Usa len() para verificar la longitud y continue para saltar.</p>
+          </div>
+          <div class="code-container">
+          <pre>productos = ["laptop", "mouse", "teclado", "monitor", "webcam"]
+
+for producto in productos:
+    if <span class="code-placeholder" id="q3-part1" contenteditable="true">[...]</span>(producto) < 6:
+        print(f"Saltando producto corto: {producto}")
+        <span class="code-placeholder" id="q3-part2" contenteditable="true">[...]</span>
+
+    if "monitor" <span class="code-placeholder" id="q3-part3" contenteditable="true">[...]</span> producto:
+        print(f"Encontrado producto clave: {producto.upper()}")</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(3)">Verificar Respuesta</button>
+          <div id="q3-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- Pregunta 4 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q4">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">4. Contador de Vocales en String</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">1 Punto</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa el contador de vocales en una frase usando FOR.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: Usa .lower() para convertir a minúsculas y el operador in.</p>
+          </div>
+          <div class="code-container">
+          <pre>frase = "Programacion en Python y Ciclos"
+contador_vocales = 0
+vocales = "aeiouáéíóú"
+
+for caracter in frase.<span class="code-placeholder" id="q4-part1" contenteditable="true">[...]</span>():
+    <span class="code-placeholder" id="q4-part2" contenteditable="true">[...]</span> caracter in vocales:
+        contador_vocales <span class="code-placeholder" id="q4-part3" contenteditable="true">[...]</span> 1
+
+print(f"Total de vocales: {contador_vocales}")</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(4)">Verificar Respuesta</button>
+          <div id="q4-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- Pregunta 5 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q5">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">5. RANGE con Paso Específico</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">1 Punto</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa el uso de range() para iterar de 1 a 10 inclusive.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: range(inicio, fin+1) para incluir el último número.</p>
+          </div>
+          <div class="code-container">
+          <pre>suma_total = 0
+
+for i in <span class="code-placeholder" id="q5-part1" contenteditable="true">[...]</span>(1, <span class="code-placeholder" id="q5-part2" contenteditable="true">[...]</span>):
+    suma_total <span class="code-placeholder" id="q5-part3" contenteditable="true">[...]</span> i
+
+print(f"Suma de 1 a 10: {suma_total}")</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(5)">Verificar Respuesta</button>
+          <div id="q5-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- Pregunta 6 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q6">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">6. FOR con BREAK - Búsqueda</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">1 Punto</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa el código que busca y detiene la ejecución al encontrar un valor.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: Usa == para comparar y break para detener el ciclo.</p>
+          </div>
+          <div class="code-container">
+          <pre>numeros = [5, 12, 8, 15, 20, 7]
+objetivo = 15
+
+<span class="code-placeholder" id="q6-part1" contenteditable="true">[...]</span> num in numeros:
+    if num <span class="code-placeholder" id="q6-part2" contenteditable="true">[...]</span> objetivo:
+        print(f"Encontrado: {num}")
+        <span class="code-placeholder" id="q6-part3" contenteditable="true">[...]</span>
+    print(f"Revisando: {num}")</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(6)">Verificar Respuesta</button>
+          <div id="q6-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- Pregunta 7 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q7">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">7. Construcción de String con FOR</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">1 Punto</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa el código que construye una expresión matemática como string.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: Usa str() para convertir y concatenar con +=.</p>
+          </div>
+          <div class="code-container">
+          <pre>n = 5
+expresion = ""
+
+for num in range(1, n + 1):
+    if num <span class="code-placeholder" id="q7-part1" contenteditable="true">[...]</span> n:
+        expresion += <span class="code-placeholder" id="q7-part2" contenteditable="true">[...]</span>(num) + " + "
+    <span class="code-placeholder" id="q7-part3" contenteditable="true">[...]</span>:
+        expresion += str(num)
+
+print(f"Expresión: {expresion}")</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(7)">Verificar Respuesta</button>
+          <div id="q7-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- CATEGORÍA 2: CICLOS WHILE Y CONTROL DE FLUJO -->
+          <h3 class="text-lg font-semibold text-blue-600 border-b border-blue-300 pb-2">Categoría 2: Ciclos WHILE y Control de Flujo (12 puntos)</h3>
+
+          <!-- Pregunta 8 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q8">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">8. Contador con WHILE Básico</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">2 Puntos</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa el ciclo while que cuenta y verifica múltiplos de 3.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: Usa <= para la condición y += para incrementar.</p>
+          </div>
+          <div class="code-container">
+          <pre>contador = 1
+limite = 10
+
+<span class="code-placeholder" id="q8-part1" contenteditable="true">[...]</span> contador <span class="code-placeholder" id="q8-part2" contenteditable="true">[...]</span> limite:
+    if contador % 3 == 0:
+        print(f"{contador} es múltiplo de 3")
+    contador <span class="code-placeholder" id="q8-part3" contenteditable="true">[...]</span> 1</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(8)">Verificar Respuesta</button>
+          <div id="q8-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- Pregunta 9 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q9">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">9. WHILE True con BREAK</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">2 Puntos</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa el ciclo infinito con condición de salida usando break.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: while True crea un ciclo infinito, break lo detiene.</p>
+          </div>
+          <div class="code-container">
+          <pre>numero_secreto = 7
+
+<span class="code-placeholder" id="q9-part1" contenteditable="true">[...]</span> <span class="code-placeholder" id="q9-part2" contenteditable="true">[...]</span>:
+    intento = int(input("Adivina el número: "))
+    if intento == numero_secreto:
+        print("¡Correcto!")
+        <span class="code-placeholder" id="q9-part3" contenteditable="true">[...]</span>
+    else:
+        print("Intenta de nuevo")</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(9)">Verificar Respuesta</button>
+          <div id="q9-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- Pregunta 10 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q10">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">10. Descuentos Iterativos con WHILE</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">2 Puntos</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa el sistema de descuentos que se aplica mientras el precio supera un umbral.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: Usa > para comparar y *= para aplicar el descuento.</p>
+          </div>
+          <div class="code-container">
+          <pre>precio_actual = 150.0
+umbral_minimo = 100.0
+
+while precio_actual <span class="code-placeholder" id="q10-part1" contenteditable="true">[...]</span> umbral_minimo:
+    if precio_actual > 140.0:
+        descuento = 0.10
+    else:
+        descuento = 0.05
+
+    precio_actual <span class="code-placeholder" id="q10-part2" contenteditable="true">[...]</span> (1 - descuento)
+
+print(f"Precio final: ${precio_actual<span class="code-placeholder" id="q10-part3" contenteditable="true">[...]</span>.2f}")</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(10)">Verificar Respuesta</button>
+          <div id="q10-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- Pregunta 11 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q11">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">11. Procesamiento de Lista con WHILE</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">2 Puntos</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa el código que procesa tareas de una lista hasta vaciarla.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: Una lista vacía evalúa como False, .pop(0) extrae el primer elemento.</p>
+          </div>
+          <div class="code-container">
+          <pre>tareas = ["Limpiar datos", "Generar informe", "Revisar código"]
+
+<span class="code-placeholder" id="q11-part1" contenteditable="true">[...]</span> tareas:
+    tarea_actual = tareas.<span class="code-placeholder" id="q11-part2" contenteditable="true">[...]</span>(0)
+    print(f"Procesando: {tarea_actual}")
+    print(f"Tareas pendientes: {<span class="code-placeholder" id="q11-part3" contenteditable="true">[...]</span>(tareas)}")</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(11)">Verificar Respuesta</button>
+          <div id="q11-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- Pregunta 12 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q12">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">12. Menú Interactivo con WHILE</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">2 Puntos</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa el menú interactivo que se repite hasta que el usuario elija salir.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: Usa != para la condición del while y .lower() para normalizar entrada.</p>
+          </div>
+          <div class="code-container">
+          <pre>opcion = ''
+
+while opcion <span class="code-placeholder" id="q12-part1" contenteditable="true">[...]</span> 's':
+    print("(1) Ver estado | (2) Configuración | (s) Salir")
+    opcion = input("Elige: ").<span class="code-placeholder" id="q12-part2" contenteditable="true">[...]</span>()
+
+    <span class="code-placeholder" id="q12-part3" contenteditable="true">[...]</span> opcion == '1':
+        print("Mostrando estado...")
+    elif opcion == 's':
+        print("Saliendo...")</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(12)">Verificar Respuesta</button>
+          <div id="q12-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- Pregunta 13 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q13">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">13. WHILE con Contador Descendente</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">2 Puntos</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa el contador que va desde n hasta 1 en orden descendente.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: Usa > 0 como condición y -= para decrementar.</p>
+          </div>
+          <div class="code-container">
+          <pre>n = 5
+contador = n
+
+while contador <span class="code-placeholder" id="q13-part1" contenteditable="true">[...]</span> 0:
+    print(f"Contando: {contador}")
+    contador <span class="code-placeholder" id="q13-part2" contenteditable="true">[...]</span> 1
+
+print("¡Despegue!")</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(13)">Verificar Respuesta</button>
+          <div id="q13-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- CATEGORÍA 3: ITERACIÓN EN ESTRUCTURAS DE DATOS -->
+          <h3 class="text-lg font-semibold text-blue-600 border-b border-blue-300 pb-2">Categoría 3: Iteración en Estructuras de Datos (12 puntos)</h3>
+
+          <!-- Pregunta 14 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q14">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">14. Uso de ENUMERATE</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">2 Puntos</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa el código que usa enumerate para obtener índice y valor simultáneamente.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: enumerate() devuelve tuplas (índice, valor).</p>
+          </div>
+          <div class="code-container">
+          <pre>frutas = ["manzana", "banana", "cereza"]
+
+for <span class="code-placeholder" id="q14-part1" contenteditable="true">[...]</span>, fruta in <span class="code-placeholder" id="q14-part2" contenteditable="true">[...]</span>(frutas):
+    print(f"Posición {i}: {fruta}")
+
+# Salida esperada:
+# Posición 0: manzana
+# Posición <span class="code-placeholder" id="q14-part3" contenteditable="true">[...]</span>: banana
+# Posición 2: cereza</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(14)">Verificar Respuesta</button>
+          <div id="q14-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- Pregunta 15 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q15">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">15. Uso de ZIP para Listas Paralelas</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">2 Puntos</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa el código que recorre dos listas en paralelo usando zip.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: zip() combina dos o más iterables en pares.</p>
+          </div>
+          <div class="code-container">
+          <pre>productos = ["Laptop", "Mouse", "Teclado"]
+precios = [1200, 25, 75]
+
+for producto, precio in <span class="code-placeholder" id="q15-part1" contenteditable="true">[...]</span>(productos, precios):
+    if precio <span class="code-placeholder" id="q15-part2" contenteditable="true">[...]</span> 100:
+        categoria = "Económico"
+    else:
+        categoria = "Premium"
+    print(f"{producto}: ${precio} - {<span class="code-placeholder" id="q15-part3" contenteditable="true">[...]</span>}")</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(15)">Verificar Respuesta</button>
+          <div id="q15-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- Pregunta 16 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q16">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">16. Iteración en Tuplas</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">2 Puntos</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa el recorrido de una tupla con condicionales.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: Las tuplas se recorren igual que las listas, usa in para verificar pertenencia.</p>
+          </div>
+          <div class="code-container">
+          <pre>colores_rgb = ("Rojo", "Verde", "Azul", "Amarillo")
+
+<span class="code-placeholder" id="q16-part1" contenteditable="true">[...]</span> color in colores_rgb:
+    if color <span class="code-placeholder" id="q16-part2" contenteditable="true">[...]</span> ("Rojo", "Verde", "Azul"):
+        print(f"Color Primario: {color}")
+    <span class="code-placeholder" id="q16-part3" contenteditable="true">[...]</span>:
+        print(f"Color Secundario: {color}")</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(16)">Verificar Respuesta</button>
+          <div id="q16-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- Pregunta 17 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q17">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">17. Desempaquetado de Tuplas en FOR</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">2 Puntos</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa el desempaquetado de tuplas anidadas en un ciclo for.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: Puedes desempaquetar directamente en el for: for lat, lon in ...</p>
+          </div>
+          <div class="code-container">
+          <pre>coordenadas = ((40.71, -74.00), (34.05, -118.24), (51.50, 0.12))
+
+for i, coord in enumerate(coordenadas):
+    <span class="code-placeholder" id="q17-part1" contenteditable="true">[...]</span>, longitud = coord
+
+    if longitud <span class="code-placeholder" id="q17-part2" contenteditable="true">[...]</span> 0:
+        hemisferio = "Oeste"
+    else:
+        hemisferio = "Este"
+
+    print(f"Ciudad {<span class="code-placeholder" id="q17-part3" contenteditable="true">[...]</span>+1}: {hemisferio}")</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(17)">Verificar Respuesta</button>
+          <div id="q17-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- Pregunta 18 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q18">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">18. Recorrido de Lista con Índices y WHILE</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">2 Puntos</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa el recorrido manual de una lista usando while e índices.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: Usa len() para obtener el tamaño y accede con [i].</p>
+          </div>
+          <div class="code-container">
+          <pre>inventario = [150, 45, 10, 200, 75]
+i = 0
+
+while i <span class="code-placeholder" id="q18-part1" contenteditable="true">[...]</span> len(inventario):
+    stock_actual = inventario<span class="code-placeholder" id="q18-part2" contenteditable="true">[...]</span>
+
+    if stock_actual <= 50:
+        print(f"Posición {i}: ¡ALERTA! Stock bajo")
+
+    i <span class="code-placeholder" id="q18-part3" contenteditable="true">[...]</span> 1</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(18)">Verificar Respuesta</button>
+          <div id="q18-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- Pregunta 19 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q19">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">19. Búsqueda en Lista con WHILE y Bandera</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">2 Puntos</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa la búsqueda que se detiene al encontrar el elemento usando una bandera.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: Usa una variable booleana (bandera) y el operador and.</p>
+          </div>
+          <div class="code-container">
+          <pre>usuarios = ["Ana", "Beto", "Carlos", "Diana"]
+buscado = "Carlos"
+i = 0
+encontrado = <span class="code-placeholder" id="q19-part1" contenteditable="true">[...]</span>
+
+while i < len(usuarios) <span class="code-placeholder" id="q19-part2" contenteditable="true">[...]</span> not encontrado:
+    if usuarios[i] == buscado:
+        encontrado = <span class="code-placeholder" id="q19-part3" contenteditable="true">[...]</span>
+        print(f"Encontrado en posición {i}")
+    i += 1</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(19)">Verificar Respuesta</button>
+          <div id="q19-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- CATEGORÍA 4: ALGORITMOS CLÁSICOS -->
+          <h3 class="text-lg font-semibold text-blue-600 border-b border-blue-300 pb-2">Categoría 4: Algoritmos Clásicos (11 puntos)</h3>
+
+          <!-- Pregunta 20 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q20">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">20. Suma de Gauss con FOR</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">2 Puntos</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa la implementación de la suma de Gauss (1+2+...+n) usando for.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: Suma iterativa desde 1 hasta n inclusive.</p>
+          </div>
+          <div class="code-container">
+          <pre>n = 10
+suma_gauss = 0
+
+<span class="code-placeholder" id="q20-part1" contenteditable="true">[...]</span> i in range(1, n + 1):
+    suma_gauss <span class="code-placeholder" id="q20-part2" contenteditable="true">[...]</span> i
+
+print(f"Suma de 1 a {n}: {suma_gauss}")
+
+# Verificación con fórmula
+formula = n * (n + 1) <span class="code-placeholder" id="q20-part3" contenteditable="true">[...]</span> 2
+print(f"Con fórmula: {formula}")</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(20)">Verificar Respuesta</button>
+          <div id="q20-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- Pregunta 21 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q21">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">21. Factorial con FOR Descendente</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">2 Puntos</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa el cálculo del factorial usando un ciclo for en orden descendente.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: range(n, 0, -1) va desde n hasta 1, usa *= para multiplicar.</p>
+          </div>
+          <div class="code-container">
+          <pre>n = 5
+factorial = 1
+
+for i in <span class="code-placeholder" id="q21-part1" contenteditable="true">[...]</span>(n, 0, <span class="code-placeholder" id="q21-part2" contenteditable="true">[...]</span>):
+    factorial <span class="code-placeholder" id="q21-part3" contenteditable="true">[...]</span> i
+
+print(f"El factorial de {n} es: {factorial}")</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(21)">Verificar Respuesta</button>
+          <div id="q21-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- Pregunta 22 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q22">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">22. Fibonacci con Variables (FOR)</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">2 Puntos</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa la secuencia de Fibonacci usando solo variables y for.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: Mantén dos variables (a, b) y actualízalas en cada iteración.</p>
+          </div>
+          <div class="code-container">
+          <pre>n_terminos = 8
+a, b = 0, 1
+
+for i in <span class="code-placeholder" id="q22-part1" contenteditable="true">[...]</span>(n_terminos):
+    print(a, end=", ")
+    <span class="code-placeholder" id="q22-part2" contenteditable="true">[...]</span>, b = b, a + b
+
+# Salida esperada: 0, 1, 1, 2, 3, 5, 8, <span class="code-placeholder" id="q22-part3" contenteditable="true">[...]</span>,</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(22)">Verificar Respuesta</button>
+          <div id="q22-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- Pregunta 23 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q23">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">23. Fibonacci con WHILE y Límite de Valor</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">2 Puntos</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa el Fibonacci que genera términos hasta que excedan un límite.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: El while continúa mientras b <= limite.</p>
+          </div>
+          <div class="code-container">
+          <pre>limite = 50
+a, b = 0, 1
+secuencia = [0]
+
+<span class="code-placeholder" id="q23-part1" contenteditable="true">[...]</span> b <span class="code-placeholder" id="q23-part2" contenteditable="true">[...]</span> limite:
+    secuencia.append(b)
+    a, b = b, a + b
+
+print(f"Fibonacci hasta {limite}: {secuencia}")
+# Salida: [0, 1, 1, 2, 3, 5, 8, 13, 21, <span class="code-placeholder" id="q23-part3" contenteditable="true">[...]</span>]</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(23)">Verificar Respuesta</button>
+          <div id="q23-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- Pregunta 24 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q24">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">24. Suma de Gauss con WHILE</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">2 Puntos</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa la suma de Gauss usando while en lugar de for.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: Inicializa contador en 1 y usa while contador <= n.</p>
+          </div>
+          <div class="code-container">
+          <pre>n = 10
+suma_gauss = 0
+contador = <span class="code-placeholder" id="q24-part1" contenteditable="true">[...]</span>
+
+while contador <= n:
+    suma_gauss += contador
+    contador <span class="code-placeholder" id="q24-part2" contenteditable="true">[...]</span> 1
+
+print(f"Suma de 1 a {n}: {suma_gauss}")</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(24)">Verificar Respuesta</button>
+          <div id="q24-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- Pregunta 25 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q25">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">25. Validación de Factorial</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">1 Punto</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa las validaciones para el cálculo del factorial.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: Valida números negativos y el caso base 0! = 1.</p>
+          </div>
+          <div class="code-container">
+          <pre>def calcular_factorial(n):
+    if n <span class="code-placeholder" id="q25-part1" contenteditable="true">[...]</span> 0:
+        return "No definido para negativos"
+    if n <span class="code-placeholder" id="q25-part2" contenteditable="true">[...]</span> 0:
+        return 1
+
+    factorial = 1
+    for i in range(1, n + 1):
+        factorial *= i
+    return factorial</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(25)">Verificar Respuesta</button>
+          <div id="q25-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- CATEGORÍA 5: MATRICES BIDIMENSIONALES -->
+          <h3 class="text-lg font-semibold text-blue-600 border-b border-blue-300 pb-2">Categoría 5: Matrices Bidimensionales (10 puntos)</h3>
+
+          <!-- Pregunta 26 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q26">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">26. Recorrido de Matriz con FOR Anidado</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">2 Puntos</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa el recorrido de una matriz usando ciclos for anidados.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: El ciclo externo recorre filas, el interno recorre columnas.</p>
+          </div>
+          <div class="code-container">
+          <pre>matriz = [
+    [10, 20, 30],
+    [40, 50, 60],
+    [70, 80, 90]
+]
+
+<span class="code-placeholder" id="q26-part1" contenteditable="true">[...]</span> fila in matriz:
+    for elemento <span class="code-placeholder" id="q26-part2" contenteditable="true">[...]</span> fila:
+        print(elemento, end=" ")
+    <span class="code-placeholder" id="q26-part3" contenteditable="true">[...]</span>()  # Salto de línea</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(26)">Verificar Respuesta</button>
+          <div id="q26-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- Pregunta 27 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q27">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">27. Acceso por Índices en Matriz</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">2 Puntos</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa el acceso a elementos de matriz usando índices [i][j].</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: Usa range(len()) para obtener índices de filas y columnas.</p>
+          </div>
+          <div class="code-container">
+          <pre>matriz = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+suma_total = 0
+
+for i in <span class="code-placeholder" id="q27-part1" contenteditable="true">[...]</span>(len(matriz)):
+    for j in range(<span class="code-placeholder" id="q27-part2" contenteditable="true">[...]</span>(matriz[i])):
+        elemento = matriz<span class="code-placeholder" id="q27-part3" contenteditable="true">[...]</span>[j]
+        suma_total += elemento
+
+print(f"Suma total: {suma_total}")</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(27)">Verificar Respuesta</button>
+          <div id="q27-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- Pregunta 28 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q28">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">28. Búsqueda en Matriz con BREAK</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">2 Puntos</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa la búsqueda en matriz que se detiene al encontrar el valor.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: Usa una bandera y break en ambos ciclos.</p>
+          </div>
+          <div class="code-container">
+          <pre>matriz = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+buscado = 5
+encontrado = False
+
+for i in range(len(matriz)):
+    for j in range(len(matriz[i])):
+        if matriz[i][j] <span class="code-placeholder" id="q28-part1" contenteditable="true">[...]</span> buscado:
+            print(f"Encontrado en [{i},{j}]")
+            encontrado = <span class="code-placeholder" id="q28-part2" contenteditable="true">[...]</span>
+            break
+    if encontrado:
+        <span class="code-placeholder" id="q28-part3" contenteditable="true">[...]</span></pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(28)">Verificar Respuesta</button>
+          <div id="q28-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- Pregunta 29 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q29">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">29. Creación de Matriz con FOR</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">2 Puntos</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa la creación dinámica de una matriz usando ciclos for.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: Inicializa lista vacía y usa .append() para agregar filas.</p>
+          </div>
+          <div class="code-container">
+          <pre>filas = 2
+columnas = 3
+matriz = <span class="code-placeholder" id="q29-part1" contenteditable="true">[...]</span>
+
+for i in range(filas):
+    fila_actual = []
+    for j in range(columnas):
+        valor = i * columnas + j
+        fila_actual.<span class="code-placeholder" id="q29-part2" contenteditable="true">[...]</span>(valor)
+    matriz.append(<span class="code-placeholder" id="q29-part3" contenteditable="true">[...]</span>)
+
+print(matriz)  # [[0, 1, 2], [3, 4, 5]]</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(29)">Verificar Respuesta</button>
+          <div id="q29-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          <!-- Pregunta 30 -->
+          <div class="question bg-white rounded-lg shadow-sm p-5 border border-gray-200" id="q30">
+          <div class="flex justify-between items-center mb-3">
+          <h4 class="text-lg font-semibold text-gray-800">30. Recorrido de Matriz con WHILE</h4>
+          <span class="bg-blue-600 text-white px-3 py-1 rounded-md text-sm">2 Puntos</span>
+          </div>
+          <div class="bg-gray-50 p-3 rounded-md mb-3">
+          <p>Completa el recorrido de matriz usando while con control manual de índices.</p>
+          <p class="text-sm text-gray-600 mt-2">Sugerencia: Inicializa i=0, j=0 y actualiza manualmente ambos contadores.</p>
+          </div>
+          <div class="code-container">
+          <pre>matriz = [[1, 2], [3, 4], [5, 6]]
+i = 0
+
+while i <span class="code-placeholder" id="q30-part1" contenteditable="true">[...]</span> len(matriz):
+    j = 0
+    while j < len(matriz[i]):
+        print(f"[{i},{j}]: {matriz[i][j]}")
+        j <span class="code-placeholder" id="q30-part2" contenteditable="true">[...]</span> 1
+    i += 1</pre>
+          </div>
+          <button class="bg-gray-600 hover:bg-gray-700 text-white px-4 py-2 rounded-md text-sm mt-2" onclick="checkAnswer(30)">Verificar Respuesta</button>
+          <div id="q30-feedback" class="mt-2 p-3 rounded-md"></div>
+          </div>
+
+          </div>
+          </div>
+
+          <div class="text-center mt-10">
+          <button id="calculate-btn" class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg text-lg" onclick="calculateFinalGrade()">Calcular Nota Final</button>
+          </div>
+
+          <div id="results" class="results mt-8 bg-green-50 p-6 rounded-lg border-l-4 border-green-500">
+          <h2 class="text-xl font-semibold text-green-800 mb-4">Resultados de la Evaluación</h2>
+          <div id="results-details" class="space-y-2"></div>
+          <div id="email-notification" class="mt-4 text-center"></div>
+          <div id="score-display" class="mt-6 text-2xl font-bold text-center p-4 bg-green-600 text-white rounded-lg"></div>
+          </div>
+          <script src="js/questions.js"></script>
+          <script src="js/scripts.js"></script>
+</body>
+</html>

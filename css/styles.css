@@ -1,0 +1,59 @@
+body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+              max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+          }
+        
+        .code-container {
+          background-color: #f5f5f5;
+            border: 1px solid #ddd;
+          border-radius: 4px;
+          padding: 15px;
+          font-family: 'Courier New', Courier, monospace;
+          font-size: 15px;
+          position: relative;
+          margin-bottom: 15px;
+          line-height: 1.5;
+          white-space: pre-wrap;
+          overflow-x: auto;
+        }
+        
+        .code-placeholder {
+          background-color: #fff3cd;
+            border: 1px dashed #ffc107;
+          border-radius: 3px;
+          padding: 0 5px;
+          color: #333;
+            font-weight: normal;
+          display: inline-block;
+          min-width: 20px;
+        }
+        
+        .code-placeholder.correct {
+          background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+          color: #155724;
+        }
+        
+        .code-placeholder.incorrect {
+          background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+          color: #721c24;
+        }
+        
+        .code-comment {
+          color: #3498db;
+            font-style: italic;
+        }
+        
+        .results {
+          display: none;
+        }
+        
+        .question {
+          margin-bottom: 20px;
+        }

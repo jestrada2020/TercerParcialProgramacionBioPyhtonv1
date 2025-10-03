@@ -1,0 +1,1348 @@
+numeros = [12, 5, 8, 21, 30, 7]
+
+print("--- Clasificador de Par/Impar ---")
+for num in numeros:
+    # La condición verifica si el residuo de la división por 2 es 0 (par)
+    if num % 2 == 0:
+        print(f"El número {num} es par.")
+    else:
+        print(f"El número {num} es impar.")
+
+
+
+
+
+
+
+contrasena_secreta = "python_master"
+max_intentos = 3
+
+print("--- Validación de Contraseña ---")
+for intento in range(1, max_intentos + 1):
+    intento_usuario = input(f"Intento {intento} de {max_intentos}. Introduce la contraseña: ")
+    
+    if intento_usuario == contrasena_secreta:
+        print("¡Acceso concedido! Bienvenido.")
+        # Usamos 'break' para salir del ciclo for inmediatamente
+        break 
+    elif intento == max_intentos:
+        # Se activa solo en el último intento fallido
+        print("🚨 Máximo de intentos alcanzado. Acceso denegado.")
+    else:
+        print("Contraseña incorrecta. Inténtalo de nuevo.")
+
+
+
+
+
+puntajes = [92, 78, 45, 85, 60]
+
+print("--- Calificador de Exámenes ---")
+for puntaje in puntajes:
+    if puntaje >= 90:
+        calificacion = "A (Excelente)"
+    elif puntaje >= 80:
+        calificacion = "B (Notable)"
+    elif puntaje >= 70:
+        calificacion = "C (Aprobado)"
+    elif puntaje >= 60:
+        calificacion = "D (Suficiente)"
+    else:
+        calificacion = "F (Reprobado)"
+        
+    print(f"Puntaje {puntaje}: Calificación {calificacion}")
+
+
+
+
+
+
+
+
+    productos = ["laptop", "mouse", "teclado", "monitor", "webcam"]
+
+print("--- Procesamiento de Inventario ---")
+for producto in productos:
+    # Condición para omitir elementos (saltar al siguiente ciclo)
+    if len(producto) < 6:
+        print(f"➡️ Saltando producto corto: {producto}")
+        continue 
+    
+    # Condición para buscar un elemento y marcarlo como especial
+    if "monitor" in producto:
+        print(f"✅ Encontrado un producto clave: {producto.upper()}")
+    else:
+        print(f"☑️ Procesando producto: {producto}")
+
+
+
+
+
+frase = "Programacion en Python y Ciclos"
+contador_vocales = 0
+vocales = "aeiouáéíóú" # Lista de vocales a buscar
+
+print("--- Contador de Vocales ---")
+for caracter in frase.lower(): # Convertir a minúsculas para simplificar la comparación
+    
+    # Condición: verificar si el carácter actual está dentro de la cadena 'vocales'
+    if caracter in vocales:
+        contador_vocales += 1
+        print(f"Vocal encontrada: {caracter}")
+
+print(f"\nLa frase '{frase}' tiene un total de {contador_vocales} vocales.")
+
+
+
+
+
+contador = 1
+limite = 15
+
+print("--- Contador con Múltiplos de 3 ---")
+while contador <= limite:
+    
+    # Condicional para verificar si es múltiplo de 3
+    if contador % 3 == 0:
+        print(f"El número {contador} es múltiplo de 3.")
+    else:
+        print(f"Número: {contador}")
+        
+    contador += 1 # Es crucial actualizar la variable para evitar un ciclo infinito
+
+
+
+
+
+numero_secreto = 7
+intento = 0
+
+print("--- Adivina el Número (del 1 al 10) ---")
+
+# El ciclo se ejecuta infinitamente (True) hasta que se encuentra la respuesta correcta
+while True:
+    try:
+        intento = int(input("Introduce tu suposición: "))
+    except ValueError:
+        print("Por favor, introduce un número válido.")
+        continue # Vuelve al inicio del ciclo
+        
+    if intento == numero_secreto:
+        print("¡Correcto! Has adivinado el número secreto.")
+        break # Sale del ciclo while
+    elif intento < numero_secreto:
+        print("Demasiado bajo. Intenta de nuevo.")
+    else:
+        print("Demasiado alto. Intenta de nuevo.")
+
+
+
+
+
+
+precio_actual = 150.0
+umbral_minimo = 100.0
+
+print("--- Simulación de Descuentos ---")
+while precio_actual > umbral_minimo:
+    print(f"Precio actual: ${precio_actual:.2f}")
+    
+    if precio_actual > 140.0:
+        descuento = 0.10 # 10%
+    elif precio_actual > 115.0:
+        descuento = 0.05 # 5%
+    else:
+        # Menor descuento cerca del umbral
+        descuento = 0.02
+        
+    precio_actual *= (1 - descuento)
+    print(f"Se aplicó un descuento del {descuento * 100:.0f}%.")
+
+print(f"\nProceso finalizado. El precio final es ${precio_actual:.2f}")
+
+
+
+
+
+
+
+tareas = ["Limpiar datos", "Generar informe", "Revisar código", "Limpiar datos"]
+
+print("--- Gestor de Tareas Pendientes ---")
+
+# El ciclo se ejecuta mientras la lista no esté vacía
+while tareas:
+    tarea_actual = tareas.pop(0) # Toma la primera tarea de la lista
+    
+    # Condicional: prioriza el código para una revisión especial
+    if "código" in tarea_actual:
+        print(f"🚨 Tarea crítica: {tarea_actual}. Realizando una revisión profunda.")
+    elif "datos" in tarea_actual:
+        print(f"🛠️ Tarea común: {tarea_actual}. Procesamiento rutinario.")
+    else:
+        print(f"📝 Tarea secundaria: {tarea_actual}. Finalizada.")
+        
+    print(f"Tareas pendientes: {len(tareas)}")
+
+print("\n¡Todas las tareas han sido completadas!")
+
+
+
+
+
+
+
+
+opcion = ''
+print("--- Menú Interactivo ---")
+
+# El ciclo se mantiene activo mientras el usuario no elija 's' (salir)
+while opcion != 's':
+    print("\nOpciones:")
+    print(" (1) Ver estado")
+    print(" (2) Configuración")
+    print(" (s) Salir")
+    
+    opcion = input("Elige una opción: ").lower()
+    
+    # Condicionales para procesar la entrada del usuario
+    if opcion == '1':
+        print("Mostrando estado del sistema...")
+    elif opcion == '2':
+        print("Accediendo al panel de configuración...")
+    elif opcion == 's':
+        print("Saliendo del programa. ¡Hasta pronto!")
+    else:
+        print("Opción no válida. Por favor, elige 1, 2 o 's'.")
+
+
+
+
+# Definimos el número límite (n)
+n = 10
+
+suma_gauss = 0
+
+print(f"Calculando la suma de Gauss para n = {n}: 1 + 2 + ... + {n}")
+
+# El ciclo for itera desde 1 hasta n (el 11 es exclusivo)
+for i in range(1, n + 1):
+    # Acumulamos el valor de i en la variable suma_gauss
+    suma_gauss += i
+    
+print(f"\nResultado de la suma usando el ciclo for: {suma_gauss}")
+
+# Verificación con la fórmula directa (solo para comparación)
+formula_check = n * (n + 1) // 2
+print(f"Resultado de la fórmula directa: {formula_check}")
+
+
+
+
+
+
+n = 7
+
+suma_gauss = 0
+sumatoria_texto = ""
+
+print(f"--- Suma Detallada para n = {n} ---")
+
+# El ciclo for recorre los números
+for num in range(1, n + 1):
+    suma_gauss += num
+    
+    # Condicional para formatear el texto: agrega '+' después de cada número
+    if num < n:
+        sumatoria_texto += str(num) + " + "
+    else:
+        # El último número no lleva '+'
+        sumatoria_texto += str(num)
+        
+print(f"\nOperación: {sumatoria_texto}")
+print(f"Resultado total: {suma_gauss}")
+
+
+
+
+
+
+def calcular_suma_gauss_con_for(n):
+    """Calcula la suma de los primeros n enteros usando un ciclo for."""
+    suma_iterativa = 0
+    for i in range(1, n + 1):
+        suma_iterativa += i
+    return suma_iterativa
+
+# Valores de prueba
+valores_n = [5, 10, 100]
+
+print("--- Verificación de Sumas ---")
+for n in valores_n:
+    suma_for = calcular_suma_gauss_con_for(n)
+    suma_formula = n * (n + 1) // 2
+    
+    # Condicional para verificar la igualdad
+    if suma_for == suma_formula:
+        estado = "Coinciden (Correcto)"
+    else:
+        estado = "NO Coinciden (Error)"
+
+    print(f"\nPara n = {n}:")
+    print(f"  Suma por ciclo for: {suma_for}")
+    print(f"  Suma por fórmula:   {suma_formula}")
+    print(f"  Estado: {estado}")
+
+
+
+
+# Definimos el número límite (n)
+n = 10
+suma_gauss = 0
+contador = 1 # Inicializamos el contador en 1
+
+print(f"--- Suma de 1 a {n} usando ciclo while ---")
+
+# El ciclo se ejecuta mientras el contador (i) sea menor o igual a n
+while contador <= n:
+    # 1. Acumulamos el valor del contador
+    suma_gauss += contador
+    
+    # 2. Incrementamos el contador (CRUCIAL para evitar ciclo infinito)
+    contador += 1
+    
+print(f"\nResultado de la suma acumulada: {suma_gauss}")
+
+# Verificación con la fórmula directa (solo para comparación)
+formula_check = n * (n + 1) // 2
+print(f"Resultado de la fórmula directa: {formula_check}")
+
+
+
+
+
+n = 8
+suma_inversa = 0
+contador = n # Inicializamos el contador en n
+
+print(f"--- Suma Inversa de {n} a 1 usando ciclo while ---")
+
+# El ciclo se ejecuta mientras el contador sea mayor que 0
+while contador > 0:
+    # Acumulamos el valor actual
+    suma_inversa += contador
+    
+    # Imprimimos el paso y disminuimos el contador
+    print(f"Sumando {contador}...")
+    contador -= 1 # Decrementamos el contador
+
+print(f"\nResultado de la suma total: {suma_inversa}")
+
+
+
+
+print("--- Calculadora de Suma de Gauss (Ciclo while) ---")
+
+# El ciclo principal se mantiene activo (True) hasta que se encuentra 'break'
+while True:
+    
+    # Solicitar el número al usuario
+    entrada = input("\nIntroduce el número límite (n) o 'salir': ").lower()
+    
+    # 1. Condicional para salir del bucle
+    if entrada == 'salir':
+        print("Saliendo de la calculadora. ¡Hasta pronto!")
+        break # Sale del ciclo while
+    
+    # 2. Condicional para procesar la entrada numérica
+    try:
+        n = int(entrada)
+        if n <= 0:
+            print("Por favor, introduce un número entero positivo.")
+            continue # Vuelve al inicio del ciclo
+        
+        suma_gauss = 0
+        i = 1 # Reiniciamos el contador
+        
+        # Bucle de cálculo interno
+        while i <= n:
+            suma_gauss += i
+            i += 1
+            
+        print(f"✅ La suma de 1 hasta {n} es: {suma_gauss}")
+
+    except ValueError:
+        print("❌ Entrada no válida. Por favor, introduce un número o 'salir'.")
+
+
+
+
+
+def calcular_factorial_for_descendente(n):
+    """
+    Calcula el factorial de n usando un ciclo for en orden descendente.
+    """
+    # 1. Validación condicional para números negativos
+    if n < 0:
+        return "El factorial no está definido para números negativos."
+    
+    # 2. Condicional para el caso base (0! = 1)
+    if n == 0:
+        return 1
+    
+    factorial_resultado = 1
+    
+    # El ciclo for va desde n hasta 1 (el 0 es exclusivo en range)
+    # Ejemplo: si n=5, range(5, 0, -1) -> 5, 4, 3, 2, 1
+    for i in range(n, 0, -1):
+        factorial_resultado *= i # Multiplica el resultado por el número actual (i)
+        
+    return factorial_resultado
+
+# Ejemplos de uso
+print(f"El factorial de 5 es: {calcular_factorial_for_descendente(5)}")
+print(f"El factorial de 0 es: {calcular_factorial_for_descendente(0)}")
+print(f"El factorial de -4 es: {calcular_factorial_for_descendente(-4)}")
+
+
+
+
+
+
+
+def calcular_factorial_for_ascendente(n):
+    """
+    Calcula el factorial de n usando un ciclo for en orden ascendente.
+    """
+    if n < 0:
+        return "El factorial no está definido para números negativos."
+    if n == 0:
+        return 1
+    
+    factorial_resultado = 1
+    
+    # El ciclo for va desde 1 hasta n (el n+1 es exclusivo)
+    # Ejemplo: si n=4, range(1, 5) -> 1, 2, 3, 4
+    for i in range(1, n + 1):
+        factorial_resultado *= i
+        
+    return factorial_resultado
+
+# Ejemplos de uso
+print(f"El factorial de 6 es: {calcular_factorial_for_ascendente(6)}") # 720
+print(f"El factorial de 3 es: {calcular_factorial_for_ascendente(3)}") # 6
+
+
+
+
+
+
+
+def calcular_factorial_con_cadena(n):
+    """
+    Calcula el factorial y devuelve el resultado junto con la expresión matemática.
+    """
+    if n < 0:
+        return "Error", "El número debe ser no negativo."
+    if n == 0:
+        return 1, "0! = 1"
+    
+    factorial_resultado = 1
+    expresion_matematica = ""
+    
+    # Ciclo para calcular el factorial y construir la cadena
+    for i in range(n, 0, -1):
+        factorial_resultado *= i
+        
+        # Condicional para saber si añadir el signo de multiplicación (x)
+        if i > 1:
+            expresion_matematica += str(i) + " x "
+        else:
+            expresion_matematica += str(i)
+            
+    return factorial_resultado, expresion_matematica
+
+# Ejemplos de uso
+numero = 4
+resultado, expresion = calcular_factorial_con_cadena(numero)
+print(f"\nEl factorial de {numero} es: {resultado}")
+print(f"Expresión: {numero}! = {expresion} = {resultado}")
+
+numero_largo = 7
+resultado_largo, expresion_larga = calcular_factorial_con_cadena(numero_largo)
+print(f"\nEl factorial de {numero_largo} es: {resultado_largo}")
+print(f"Expresión: {numero_largo}! = {expresion_larga}")
+
+
+
+
+
+
+
+# Un arreglo (lista) de frutas
+frutas = ["manzana", "banana", "cereza", "uva", "kiwi"]
+
+print("--- Recorrido Básico de Elementos ---")
+
+# El ciclo for itera sobre los valores de la lista, no sobre los índices
+for fruta in frutas:
+    print(f"La fruta actual es: {fruta}")
+
+# Salida:
+# La fruta actual es: manzana
+# La fruta actual es: banana
+# ...
+
+
+
+
+
+# Un arreglo (lista) de temperaturas
+temperaturas_c = [18, 25, 30, 15, 22]
+
+print("--- Procesamiento con Condicional por Valor ---")
+
+# El ciclo for utiliza la función enumerate() para obtener tanto el índice (i)
+# como el valor (temp) de la lista al mismo tiempo.
+for i, temp in enumerate(temperaturas_c):
+    
+    # Condicional: verificar si la temperatura supera el umbral
+    if temp > 25:
+        print(f"🥵 Posición {i}: ¡Alerta! La temperatura de {temp}°C es alta.")
+    else:
+        print(f"✅ Posición {i}: Temperatura normal de {temp}°C.")
+
+# Salida:
+# Posición 0: Temperatura normal de 18°C.
+# Posición 1: Temperatura normal de 25°C.
+# Posición 2: ¡Alerta! La temperatura de 30°C es alta.
+# ...
+
+
+
+
+
+# Arreglo de nombres de productos
+productos = ["Laptop", "Ratón", "Monitor", "Teclado"]
+# Arreglo de precios correspondientes
+precios = [1200.50, 25.99, 450.00, 75.25]
+
+print("--- Recorrido Paralelo (zip) ---")
+
+# El ciclo for recorre ambos arreglos en paralelo
+for producto, precio in zip(productos, precios):
+    
+    # Condicional: Formatea la salida con lógica de negocio
+    if precio < 100:
+        etiqueta = "Económico"
+    else:
+        etiqueta = "Premium"
+        
+    print(f"Producto: {producto} | Precio: ${precio:.2f} | Categoría: {etiqueta}")
+
+# Salida:
+# Producto: Laptop | Precio: $1200.50 | Categoría: Premium
+# Producto: Ratón | Precio: $25.99 | Categoría: Económico
+# ...
+
+
+
+
+# Lista de planetas en orden
+planetas = ["Mercurio", "Venus", "Tierra", "Marte", "Júpiter"]
+
+print("--- 🪐 Nombres de los Planetas ---")
+
+# El ciclo asigna secuencialmente cada elemento de 'planetas' a la variable 'nombre'
+for nombre in planetas:
+    # Usamos una condicional simple para resaltar la Tierra
+    if nombre == "Tierra":
+        print(f"🌍 ¡Nuestro hogar es: {nombre.upper()}!")
+    else:
+        print(f"⚪ Procesando: {nombre}")
+
+
+
+
+
+# Lista de puntajes
+puntajes = [85, 92, 78, 95, 60]
+
+print("--- 📊 Puntajes y Posición ---")
+
+# 'enumerate' devuelve dos valores: el índice (i) y el elemento (p)
+for i, p in enumerate(puntajes):
+    # Condicional: verificar si el puntaje es de excelencia
+    if p >= 90:
+        print(f"⭐ El puntaje de excelencia en la posición {i+1} es: {p}")
+    else:
+        print(f"   Posición {i+1}: Puntaje {p}")
+
+
+
+
+
+
+
+# Lista de productos
+productos = ["Pan", "Leche", "Huevos", "Queso"]
+# Lista de precios correspondientes
+precios = [2.50, 1.80, 3.20, 5.00]
+
+print("--- 🛒 Inventario por Producto y Precio ---")
+
+# 'zip' crea pares de elementos (producto, precio) y el ciclo los recorre
+for producto, precio in zip(productos, precios):
+    
+    # Condicional: Clasificar el producto por su precio
+    if precio > 3.00:
+        categoria = "Alto Valor"
+    else:
+        categoria = "Básico"
+        
+    print(f"Item: {producto:<10} | Precio: ${precio:.2f} | Categoría: {categoria}")
+
+
+
+
+
+
+
+# Una tupla (inmutable) de colores RGB
+colores_rgb = ("Rojo", "Verde", "Azul", "Amarillo", "Cian")
+
+print("--- 🎨 Colores en la Paleta ---")
+
+# El ciclo itera sobre los valores de la tupla
+for color in colores_rgb:
+    # Usamos una condicional para identificar los colores primarios
+    if color in ("Rojo", "Verde", "Azul"):
+        print(f"✅ Color Primario: {color}")
+    else:
+        print(f"⚪ Color Secundario: {color}")
+
+
+
+
+
+
+
+# Una tupla de coordenadas (latitud, longitud)
+coordenadas = ((40.71, -74.00), (34.05, -118.24), (51.50, 0.12))
+
+print("--- 📍 Coordenadas de Ciudades ---")
+
+# 'enumerate' devuelve el índice (i) y el elemento (coord, que es otra tupla)
+for i, coord in enumerate(coordenadas):
+    latitud, longitud = coord # Desempaquetamos la tupla interna
+    
+    # Condicional: Identificar si la ciudad está en el hemisferio Oeste (longitud negativa)
+    if longitud < 0:
+        hemisferio = "Oeste"
+    else:
+        hemisferio = "Este"
+        
+    print(f"Ciudad {i+1}: Latitud={latitud} | Hemisferio: {hemisferio}")
+
+
+
+
+
+
+# Tupla de nombres de películas
+peliculas = ("Titanic", "Avatar", "Oppenheimer", "Barbie")
+# Tupla de años de estreno correspondientes
+años = (1997, 2009, 2023, 2023)
+
+print("--- 🎬 Películas y Estreno ---")
+
+# 'zip' crea pares de elementos (pelicula, año) para iterar
+for pelicula, año in zip(peliculas, años):
+    
+    # Condicional: Clasificar por año de estreno
+    if año >= 2020:
+        era = "Moderna (Post-2020)"
+    else:
+        era = "Clásica (Pre-2020)"
+        
+    print(f"'{pelicula}' ({año}) | Clasificación: {era}")
+
+
+
+# Arreglo (lista) de niveles de stock
+inventario_stock = [150, 45, 10, 200, 75, 5]
+limite_alerta = 50
+
+i = 0  # Inicializamos el índice
+print("--- 🛒 Verificación de Stock (Lista/Arreglo) ---")
+
+# El ciclo continúa mientras el índice sea menor que la longitud total de la lista
+while i < len(inventario_stock):
+    stock_actual = inventario_stock[i]
+    
+    # Condicional: verificar si el stock está bajo el límite
+    if stock_actual <= limite_alerta:
+        print(f"🚨 Posición {i}: ¡ALERTA! Stock bajo ({stock_actual} unidades).")
+    else:
+        print(f"✅ Posición {i}: Stock normal ({stock_actual} unidades).")
+        
+    i += 1  # Incrementamos el índice manualmente
+
+
+
+
+
+
+usuarios_activos = ["Ana", "Beto", "Carlos", "Diana", "Elena"]
+usuario_buscado = "Diana"
+indice_busqueda = 0
+encontrado = False
+
+print(f"--- 🔎 Búsqueda de '{usuario_buscado}' en la Lista ---")
+
+# El ciclo continúa mientras no se encuentre el usuario Y el índice sea válido
+while indice_busqueda < len(usuarios_activos) and not encontrado:
+    
+    usuario_actual = usuarios_activos[indice_busqueda]
+    
+    # Condicional: Si encontramos al usuario, cambiamos la bandera y rompemos
+    if usuario_actual == usuario_buscado:
+        encontrado = True
+        print(f"🎉 ¡Éxito! '{usuario_buscado}' encontrado en la posición {indice_busqueda}.")
+    else:
+        print(f"Descartando: {usuario_actual}")
+        
+    indice_busqueda += 1
+
+# Condicional fuera del ciclo para el caso de no encontrar nada
+if not encontrado:
+    print(f"\n❌ Usuario '{usuario_buscado}' no se encontró en la lista.")
+
+
+
+
+
+
+
+
+# Tupla de direcciones web
+direcciones_ip = ("192.168.1.1", "10.0.0.5", "172.16.0.1")
+
+i = len(direcciones_ip) - 1  # Empezamos en el último índice
+print("--- 🌐 Recorrido Inverso de IPs (Tupla) ---")
+
+# El ciclo se ejecuta mientras el índice sea mayor o igual a 0
+while i >= 0:
+    ip_actual = direcciones_ip[i]
+    
+    # Condicional: Clasificar la IP
+    if ip_actual.startswith("192."):
+        clase = "Clase C Local"
+    else:
+        clase = "Otra Clase Local"
+        
+    print(f"[{i}] IP: {ip_actual:<15} | Tipo: {clase}")
+    
+    i -= 1  # Decrementamos el índice
+
+
+
+
+
+
+
+def fibonacci_for_basico(n_terminos):
+    """Calcula los primeros n términos de Fibonacci usando 'for'."""
+    if n_terminos <= 0:
+        return []
+    if n_terminos == 1:
+        return [0]
+    
+    # Inicializamos la lista con los dos primeros términos
+    fib_sequence = [0, 1]
+    
+    # El ciclo for itera n_terminos - 2 veces (ya tenemos 2 términos)
+    for _ in range(2, n_terminos):
+        # El siguiente término es la suma de los dos últimos
+        next_term = fib_sequence[-1] + fib_sequence[-2]
+        fib_sequence.append(next_term)
+        
+    return fib_sequence
+
+# Ejemplo:
+n = 8
+resultado = fibonacci_for_basico(n)
+print(f"Fibonacci ({n} términos, FOR): {resultado}")
+# Salida: [0, 1, 1, 2, 3, 5, 8, 13]
+
+
+
+
+
+
+
+
+def fibonacci_for_variables(n_terminos):
+    """Calcula la secuencia imprimiendo, usando solo variables."""
+    if n_terminos <= 0:
+        return
+    
+    a, b = 0, 1
+    print("Secuencia (FOR, variables):", end=" ")
+    
+    for i in range(n_terminos):
+        if i == 0:
+            print(a, end=", ")
+        elif i == 1:
+            print(b, end=", ")
+        else:
+            c = a + b
+            print(c, end=", ")
+            
+            # Actualizamos a y b para la siguiente iteración
+            a, b = b, c
+    print()
+
+# Ejemplo:
+fibonacci_for_variables(9)
+# Salida: Secuencia (FOR, variables): 0, 1, 1, 2, 3, 5, 8, 13, 21,
+
+
+
+
+
+
+
+
+
+def fibonacci_for_break(n_terminos):
+    """Calcula n términos, pero se detiene al pasar de 13."""
+    fib_sequence = [0, 1]
+    
+    for _ in range(2, n_terminos + 5): # Iteramos más de lo necesario
+        a = fib_sequence[-1]
+        b = fib_sequence[-2]
+        next_term = a + b
+        
+        # Condicional: Usamos break para limitar la secuencia a 13
+        if next_term > 13:
+            break
+            
+        fib_sequence.append(next_term)
+        
+    return fib_sequence
+
+# Ejemplo:
+n = 12 # Pedimos 12 términos, pero se detendrá en 13
+resultado = fibonacci_for_break(n)
+print(f"Fibonacci (FOR, con break): {resultado}")
+# Salida: [0, 1, 1, 2, 3, 5, 8, 13]
+
+
+
+
+
+
+
+
+
+
+def fibonacci_while_basico(n_terminos):
+    """Calcula los primeros n términos de Fibonacci usando 'while'."""
+    if n_terminos <= 0:
+        return []
+    if n_terminos == 1:
+        return [0]
+
+    fib_sequence = [0, 1]
+    contador = 2  # Ya tenemos 2 términos
+    
+    # El ciclo continúa mientras no hayamos generado n términos
+    while contador < n_terminos:
+        next_term = fib_sequence[-1] + fib_sequence[-2]
+        fib_sequence.append(next_term)
+        
+        contador += 1  # Incrementamos el contador manualmente
+        
+    return fib_sequence
+
+# Ejemplo:
+n = 10
+resultado = fibonacci_while_basico(n)
+print(f"Fibonacci ({n} términos, WHILE): {resultado}")
+# Salida: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+
+
+
+
+
+
+
+def fibonacci_while_valor_limite(limite_valor):
+    """Genera la secuencia hasta que el término sea mayor al límite."""
+    if limite_valor <= 0:
+        return [0]
+
+    a, b = 0, 1
+    secuencia = [0]
+    
+    # El ciclo continúa mientras el último término (b) no exceda el límite
+    while b <= limite_valor:
+        secuencia.append(b)
+        
+        # Actualizamos para la siguiente iteración
+        a, b = b, a + b
+        
+    return secuencia
+
+# Ejemplo:
+limite = 50
+resultado = fibonacci_while_valor_limite(limite)
+print(f"Fibonacci (WHILE, límite de valor 50): {resultado}")
+# Salida: [0, 1, 1, 2, 3, 5, 8, 13, 21, 34] (El 55 se queda fuera)
+
+
+
+
+
+
+
+
+
+def fibonacci_while_interactivo():
+    """Solicita la entrada al usuario y calcula la secuencia."""
+    
+    while True:
+        try:
+            n_terminos = int(input("¿Cuántos términos de Fibonacci quieres (n > 0)? "))
+            
+            # Condicional para validar la entrada
+            if n_terminos <= 0:
+                print("❌ Por favor, ingresa un número positivo.")
+                continue # Vuelve al inicio del while
+            
+            # Si es válido, calculamos y rompemos el while True
+            a, b = 0, 1
+            secuencia = [0]
+            
+            # Bucle de cálculo interno para los n-1 términos restantes
+            i = 1
+            while i < n_terminos:
+                secuencia.append(b)
+                a, b = b, a + b
+                i += 1
+                
+            print(f"✅ Secuencia generada (WHILE): {secuencia}")
+            break # Rompe el ciclo while True
+            
+        except ValueError:
+            print("❌ Entrada no válida. Ingresa un número entero.")
+
+# Ejemplo de uso (ejecútalo para probar la interactividad):
+# fibonacci_while_interactivo()
+
+
+
+
+
+
+matriz_for_1 = [
+    [10, 20, 30, 40], # Fila 0
+    [50, 60, 70, 80], # Fila 1
+    [90, 100, 110, 120] # Fila 2
+]
+
+print("--- 1. Recorrido por Valor (FOR) ---")
+
+# Ciclo exterior: recorre cada 'fila' (que es una lista)
+for fila in matriz_for_1:
+    # Ciclo interior: recorre cada 'elemento' dentro de la fila actual
+    for elemento in fila:
+        print(elemento, end=" ") # Imprime el elemento y un espacio
+    print() # Salto de línea al terminar la fila
+
+# Salida:
+# 10 20 30 40 
+# 50 60 70 80 
+# 90 100 110 120
+
+
+
+
+
+
+
+
+matriz_for_2 = [
+    [5, 15, 25, 35],
+    [55, 65, 75, 85],
+    [95, 105, 115, 125]
+]
+
+suma_total = 0
+
+print("--- 2. Recorrido por Índice y Suma (FOR) ---")
+
+# Ciclo exterior: recorre las filas (índice i)
+for i in range(len(matriz_for_2)):
+    # Ciclo interior: recorre las columnas (índice j)
+    for j in range(len(matriz_for_2[i])):
+        elemento = matriz_for_2[i][j]
+        
+        # Condicional: solo sumar elementos mayores que 50
+        if elemento > 50:
+            suma_total += elemento
+            print(f"[{i},{j}] Sumado: {elemento}")
+
+print(f"\nLa suma de elementos mayores a 50 es: {suma_total}")
+
+
+
+
+
+
+
+
+matriz_for_3 = [
+    [1, 1, 1, 1],
+    [2, 2, 2, 2],
+    [3, 3, 3, 3]
+]
+
+print("--- 3. Modificación de Matriz (FOR) ---")
+print("Matriz Original:")
+for fila in matriz_for_3: print(fila)
+
+# Ciclo exterior (filas)
+for i in range(len(matriz_for_3)):
+    # Ciclo interior (columnas)
+    for j in range(len(matriz_for_3[i])):
+        
+        # Modificación: el nuevo valor es el valor original * 10
+        matriz_for_3[i][j] *= 10
+        
+print("\nMatriz Modificada (x10):")
+for fila in matriz_for_3: print(fila)
+
+
+
+
+
+
+
+matriz_while_1 = [
+    [100, 200, 300, 400],
+    [500, 600, 700, 800],
+    [900, 1000, 1100, 1200]
+]
+
+filas = len(matriz_while_1)     # 3
+columnas = len(matriz_while_1[0]) # 4
+
+i = 0  # Contador de fila
+print("--- 4. Recorrido por Índice (WHILE) ---")
+
+# Ciclo exterior: mientras el índice de fila (i) sea menor que el número de filas
+while i < filas:
+    j = 0  # Inicializamos el contador de columna DENTRO del ciclo de fila
+    
+    # Ciclo interior: mientras el índice de columna (j) sea menor que el número de columnas
+    while j < columnas:
+        elemento = matriz_while_1[i][j]
+        print(f"({i},{j}): {elemento}", end=" | ")
+        j += 1  # ¡Incremento obligatorio de la columna!
+        
+    print() # Salto de línea
+    i += 1  # ¡Incremento obligatorio de la fila!
+
+
+
+
+
+
+
+matriz_while_2 = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12]
+]
+
+valor_buscado = 7
+i = 0
+encontrado = False
+
+print(f"--- 5. Búsqueda con Parada (WHILE) ---")
+
+while i < len(matriz_while_2):
+    j = 0
+    while j < len(matriz_while_2[i]):
+        elemento = matriz_while_2[i][j]
+        
+        # Condicional: verificar si se encontró el valor
+        if elemento == valor_buscado:
+            print(f"🎉 Encontrado {valor_buscado} en [{i},{j}].")
+            encontrado = True
+            break # Rompe el ciclo interior (columnas)
+            
+        j += 1
+    
+    # Condicional: verificar si se encontró para romper también el ciclo exterior
+    if encontrado:
+        break
+        
+    i += 1
+
+
+
+
+
+
+matriz_while_3 = [
+    [1, 2, 3, 4],
+    [5, 6, 7],         # Fila más corta
+    [9, 10, 11, 12]
+]
+
+filas = len(matriz_while_3)
+i = 0
+
+print("--- 6. Matriz Irregular con Manejo de Errores (WHILE) ---")
+
+while i < filas:
+    j = 0
+    
+    # El límite del ciclo interior se basa en el número máximo de columnas (4)
+    while j < 4: 
+        try:
+            elemento = matriz_while_3[i][j]
+            print(f"[{i},{j}]: {elemento}", end=" | ")
+        
+        # Condicional: Captura el error si el índice de columna está fuera de rango
+        except IndexError:
+            print(f"[{i},{j}]: N/A", end=" | ")
+        
+        j += 1
+    
+    print()
+    i += 1
+
+
+
+
+
+
+def crear_matriz_while_salto_fila():
+    matriz = []
+    FILAS = 2
+    COLUMNAS = 3
+    i = 0
+    
+    print("--- 6. Matriz con WHILE y Condicional de Salto ---")
+
+    while i < FILAS:
+        # Condicional: Si la fila no existe, la creamos
+        if len(matriz) <= i:
+            matriz.append([])
+            
+        fila_actual = matriz[i]
+        j = len(fila_actual) # Columna actual
+        
+        # Condicional: Si la fila ya está llena, avanzamos a la siguiente fila
+        if j == COLUMNAS:
+            i += 1
+            continue # Salta el resto del código y va al inicio del while
+        
+        # Código de entrada si la fila NO está llena
+        while True:
+            try:
+                valor = int(input(f"Ingresa valor para [{i},{j}]: "))
+                fila_actual.append(valor)
+                break
+            except ValueError:
+                print("Entrada no válida. Por favor, ingresa un número entero.")
+        
+    print("\nMatriz Final (2x3):\n", matriz)
+    return matriz
+
+# crear_matriz_while_salto_fila()
+
+
+
+
+
+
+def crear_matriz_while_longitud_fila():
+    matriz = []
+    FILAS = 2
+    COLUMNAS = 3
+    i = 0
+    
+    print("--- 5. Matriz con WHILE y Control de Longitud de Fila ---")
+
+    # Ciclo exterior: control de la fila actual
+    while i < FILAS:
+        fila_actual = []
+        
+        # Ciclo interior: control de las columnas (j)
+        while len(fila_actual) < COLUMNAS:
+            j = len(fila_actual) # El índice de la columna es el tamaño actual de la fila
+            
+            while True:
+                try:
+                    valor = int(input(f"Ingresa valor para [{i},{j}]: "))
+                    fila_actual.append(valor)
+                    break
+                except ValueError:
+                    print("Entrada no válida. Por favor, ingresa un número entero.")
+        
+        matriz.append(fila_actual)
+        i += 1 # Incremento de la fila
+        
+    print("\nMatriz Final (2x3):\n", matriz)
+    return matriz
+
+# crear_matriz_while_longitud_fila()
+
+
+
+
+
+
+def crear_matriz_while_indices():
+    matriz = []
+    FILAS = 2
+    COLUMNAS = 3
+    
+    i = 0 # Contador de fila
+    print("--- 4. Matriz con WHILE e Índices Anidados ---")
+
+    # Ciclo exterior: control de filas
+    while i < FILAS:
+        fila_actual = []
+        j = 0 # Contador de columna (se reinicia en cada fila)
+        
+        # Ciclo interior: control de columnas
+        while j < COLUMNAS:
+            while True:
+                try:
+                    valor = int(input(f"Ingresa valor para [{i},{j}]: "))
+                    fila_actual.append(valor)
+                    break
+                except ValueError:
+                    print("Entrada no válida. Por favor, ingresa un número entero.")
+            
+            j += 1 # ¡CRUCIAL: Incremento de columna!
+            
+        matriz.append(fila_actual)
+        i += 1 # ¡CRUCIAL: Incremento de fila!
+        
+    print("\nMatriz Final (2x3):\n", matriz)
+    return matriz
+
+# crear_matriz_while_indices()
+
+
+
+
+
+
+def crear_matriz_for_listas():
+    # Inicializamos la matriz con 2 listas vacías (filas)
+    matriz = [[], []] 
+    columnas = 3
+    
+    print("--- 3. Matriz con FOR y Listas Pre-inicializadas ---")
+
+    # Ciclo exterior: itera directamente sobre las filas de la matriz
+    for i, fila_actual in enumerate(matriz):
+        
+        # Ciclo interior: usa range para el número de columnas
+        for j in range(columnas):
+            while True:
+                try:
+                    valor = int(input(f"Ingresa valor para [{i},{j}]: "))
+                    fila_actual.append(valor) # Agrega directamente a la fila
+                    break
+                except ValueError:
+                    print("Entrada no válida. Por favor, ingresa un número entero.")
+        
+    print("\nMatriz Final (2x3):\n", matriz)
+    return matriz
+
+# crear_matriz_for_listas()
+
+
+
+
+
+def crear_matriz_for_enumerate():
+    matriz = []
+    
+    # Lista auxiliar para las filas y columnas para usar enumerate
+    filas_indices = [0, 1]
+    columnas_indices = [0, 1, 2]
+    
+    print("--- 2. Matriz con FOR y ENUMERATE ---")
+
+    # Ciclo exterior: usa el índice i para saber la fila actual
+    for i, _ in enumerate(filas_indices):
+        fila_actual = []
+        
+        # Ciclo interior: usa el índice j para saber la columna actual
+        for j, _ in enumerate(columnas_indices):
+            while True:
+                try:
+                    valor = int(input(f"Ingresa valor para [{i},{j}]: "))
+                    fila_actual.append(valor)
+                    break
+                except ValueError:
+                    print("Entrada no válida. Por favor, ingresa un número entero.")
+
+        matriz.append(fila_actual)
+        
+    print("\nMatriz Final (2x3):\n", matriz)
+    return matriz
+
+# crear_matriz_for_enumerate()
+
+
+
+
+
+def crear_matriz_for_rango():
+    matriz = []
+    filas = 2
+    columnas = 3
+    
+    print("--- 1. Matriz con FOR y Rangos Fijos ---")
+    
+    # Ciclo exterior: itera por las filas (0 a 1)
+    for i in range(filas):
+        fila_actual = []
+        
+        # Ciclo interior: itera por las columnas (0 a 2)
+        for j in range(columnas):
+            while True:
+                try:
+                    # Solicitamos el componente
+                    valor = int(input(f"Ingresa el valor para la componente [{i},{j}]: "))
+                    fila_actual.append(valor)
+                    break
+                except ValueError:
+                    print("Entrada no válida. Por favor, ingresa un número entero.")
+                    
+        matriz.append(fila_actual)
+        
+    print("\nMatriz Final (2x3):\n", matriz)
+    return matriz
+
+# crear_matriz_for_rango()
+
+
+
+
+
+
+
+
+
